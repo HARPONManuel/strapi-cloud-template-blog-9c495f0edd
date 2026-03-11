@@ -1,5 +1,14 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface SharedCompTest1 extends Struct.ComponentSchema {
+  collectionName: 'components_shared_comp_test1s';
+  info: {
+    displayName: 'CompTest1';
+    icon: 'crop';
+  };
+  attributes: {};
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -65,6 +74,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'shared.comp-test1': SharedCompTest1;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
